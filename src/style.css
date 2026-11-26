@@ -1,0 +1,58 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #251e19;
+  background: #faf7ef;
+  font-synthesis: none;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(100%, 35rem); margin: auto; padding: clamp(1rem, 4vw, 2rem); }
+h1 { margin: 0 0 1rem; font-size: clamp(1.7rem, 6vw, 2.4rem); letter-spacing: -.045em; }
+
+.viewfinder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  max-height: 55svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: white;
+  background: #242c27;
+  border-radius: 1.25rem;
+}
+
+video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.guide { position: relative; width: min(72%, 38svh); aspect-ratio: 1; }
+.guide i { position: absolute; width: 24px; height: 24px; border: solid #ffc593; }
+.guide i:nth-child(1) { inset: 0 auto auto 0; border-width: 3px 0 0 3px; border-top-left-radius: .65rem; }
+.guide i:nth-child(2) { inset: 0 0 auto auto; border-width: 3px 3px 0 0; border-top-right-radius: .65rem; }
+.guide i:nth-child(3) { inset: auto auto 0 0; border-width: 0 0 3px 3px; border-bottom-left-radius: .65rem; }
+.guide i:nth-child(4) { inset: auto 0 0 auto; border-width: 0 3px 3px 0; border-bottom-right-radius: .65rem; }
+#view-hint {
+  position: absolute;
+  bottom: .65rem;
+  margin: 0;
+  padding: .3rem .7rem;
+  border-radius: .6rem;
+  background: #1d2621;
+  font-size: .875rem;
+}
+
+.result { margin-top: .75rem; padding: .75rem 1rem; border-radius: .9rem; background: #efebe0; }
+.result[data-kind="buy"] { background: #dbeadd; }
+.result[data-kind="skip"] { background: #f5dfd6; }
+.result-heading { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+.result h2 { font-size: 1.25rem; margin: 0; }
+.result p { margin: .25rem 0 0; }
+#source { flex-shrink: 0; font-size: .75rem; color: #49473e; }
+.controls { margin-top: .75rem; }
+.controls p { font-size: .825rem; line-height: 1.45; margin: .6rem .125rem 0; color: #554e44; }
+
+button { font: inherit; font-weight: 700; cursor: pointer; min-height: 44px; }
+button:focus-visible { outline: 3px solid #775239; outline-offset: 3px; }
+#camera { width: 100%; border: 0; border-radius: .75rem; padding: .75rem; background: #9d3e1e; color: white; }
+#camera[data-active] { background: #e9e2d4; color: #251e19; }
+#retry { margin-top: .5rem; padding: 0 .75rem; border: 1px solid #7f6a60; border-radius: .5rem; background: white; color: inherit; }
