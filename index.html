@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#faf7ef" />
+    <meta name="description" content="A camera-based cantaloupe scanner for the produce aisle." />
+    <title>Cantaloupe Scanner</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Cantaloupe Scanner</h1>
+      <div class="viewfinder">
+        <video muted playsinline aria-hidden="true"></video>
+        <div class="guide" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <p id="view-hint">Camera is off</p>
+      </div>
+      <section class="result" aria-live="polite" aria-atomic="true" hidden>
+        <div class="result-heading"><h2 id="verdict"></h2><span id="source" hidden></span></div>
+        <p id="reason"></p>
+        <button id="retry" type="button" hidden>Try again</button>
+      </section>
+      <div class="controls">
+        <button id="camera" type="button">Start</button>
+        <p>One camera image may be sent to Google for a scan when on-device AI is unavailable.</p>
+      </div>
+    </main>
+  </body>
+</html>
